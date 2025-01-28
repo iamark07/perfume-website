@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+    scroll-behavior: smooth;
+}
+
+.poppins-regular {
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* offer title section */
+
+.scroll-text {
+    animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-120%);
+    }
+}
+
+@media screen and (min-width: 340px) and (max-width: 767px) {
+    /* offer title section */
+
+    .scroll-text {
+        animation: scroll 15s linear infinite;
+    }
+    @keyframes scroll {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(-500%);
+        }
+    }
+}
+
+/* menu section */
+#mobile-menu ul::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+}
+
+#mobile-menu ul::-webkit-scrollbar-track {
+    background: #bcbcbc; /* Light gray background for the track */
+    border-radius: 10px;
+}
+
+/* Customize the scrollbar thumb (the draggable part) */
+#mobile-menu ul::-webkit-scrollbar-thumb {
+    background: #7d7d7d; /* Darker color for the thumb */
+    border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+#mobile-menu ul {
+    height: calc(100dvh - 160px);
+}
+
+/* Smooth image fade transition */
+.hero-image {
+    transition: opacity 1s ease-in-out;
+}
+
+/* filter and sort section */
+
+#filterOptions {
+    width: calc(100vw - 32px);
+}
+
+#sortOptions {
+    width: calc(100vw - 32px);
+}
+
+/* Additional CSS for animations */
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+/* login form */
+/* 
+.login_form_error{
+    animation: log_error 3s;
+}
+
+@keyframes log_error {
+    0% {
+        display: none;
+    }
+    50% {
+        display: block;
+    }
+    100%{
+        display: none;
+    }
+}
+
+.login_form_success{
+    animation: log_success 3s;
+}
+@keyframes log_success {
+    0% {
+        display: none;
+    }
+    50% {
+        display: block;
+    }
+    100%{
+        display: none;
+    }
+} */
