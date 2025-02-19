@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-</head>
-<body class="bg-[#fff7ee] font-sans text-gray-800">
-    <!-- Include Header -->
-    @include('partials.header')
+@extends('frontend.partials.app')
+
+@section('content')
 
     
     <section class="register_section px-5 md:px-20 my-20 flex flex-col items-center justify-center">
@@ -102,8 +92,6 @@
         </div>
     </section>
 
-    <script src="assets/js/cart.js"></script>
-
     <script>
         // form validation JavaScript code goes here
         // form validation 
@@ -164,19 +152,6 @@
 });
 
 
-
-        // // Show/Hide Admin Code Input
-        // document.getElementById('userType').addEventListener('change', function() {
-        //     const adminCodeField = document.getElementById('adminCodeField');
-        //     if (this.value === 'admin') {
-        //         adminCodeField.style.display = 'block';
-        //     } else {
-        //         adminCodeField.style.display = 'none';
-        //     }
-        // });
-
-
-
         // hide or show password
         function show_pass(icon) {
             // Find the corresponding input field using the passed icon
@@ -203,6 +178,4 @@
         }
     </script>
 
-</body>
-
-</html>
+@endsection

@@ -1,26 +1,6 @@
-<?php
-// include "config.php";
-// session_start();
-// if(isset($_SESSION["username"])){
-//     header("Location: $hostname/admin/watches/watches.php");
-// }
-?>
-<!DOCTYPE html>
-<html lang="en">
+@extends('frontend.partials.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-
-<body class="bg-[#fff7ee] font-sans text-gray-800">
-
-    <!-- Include Header -->
-    @include('partials.header')
+@section('content')
 
     <!-- Login Section -->
     <section class="login_section px-5 md:px-20 my-20 flex justify-center">
@@ -82,7 +62,7 @@
         </div>
     </section>
 
-    <script src="assets/js/cart.js"></script>
+
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(event) {
             // Prevent the form from submitting
@@ -136,6 +116,4 @@
         }
     </script>
 
-</body>
-
-</html>
+@endsection

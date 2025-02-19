@@ -259,7 +259,6 @@
         </div>
     </div>
 
-    <script src="assets/js/cart.js"></script>
     <script>
         function showPopup(id) {
             const popup = document.getElementById(id);

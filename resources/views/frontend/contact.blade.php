@@ -1,19 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('frontend.partials.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-</head>
-
-<body class="bg-[#fff7ee] font-sans text-gray-800">
-
-    <!-- Include Header -->
-    @include('partials.header')
+@section('content')
 
     <!-- Contact Us Section -->
     <section class="contact-us-section px-5 md:px-20 py-20">
@@ -78,8 +65,4 @@
         </div>
     </section>
 
-    <script src="{{ asset('assets/js/cart.js') }}"></script>
-
-</body>
-
-</html>
+@endsection

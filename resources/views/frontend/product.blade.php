@@ -1,45 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('frontend.partials.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product</title>
-    <!-- scroll animation css cdn link -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-    <!-- tailwind css cdn link -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- rimix icon cdn link -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-
-    <!-- custom css -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    {{-- <style>
-        .add_cart_btn{
-            animation: scale_animate 1.5s infinite;
-        }
-
-        .add_cart_btn:hover{
-            animation: scale_animate 0s infinite;
-            transform: scale(1);
-        }
-
-        @keyframes scale_animate{
-            0%, 100%{
-                transform: scale(1);
-            }
-            50%{
-                transform: scale(.9);
-            }
-        }
-    </style>
-</head> --}}
-
-<body class="bg-[#f9f9f9] font-sans text-gray-800">
-
-    <!-- Include Header -->
-    @include('partials.header')
+@section('content')
 
     <!-- Product Details Container -->
     <div class="pt-5 lg:py-10 px-5 md:px-20 fade-in lg:mt-10">
@@ -103,20 +64,12 @@
         </div>
     </div>
 
-    <!-- Include Footer -->
-    @include('partials.footer')
-
-
+    {{-- footer --}}
+    @section('footer')
+        @include('frontend.partials.footer')
+    @endsection
     
-
-    <script src="assets/js/cart.js"></script>
-    <!-- scroll animation script link -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        AOS.init({
-            offset: 150,
-            duration: 700,
-        });
 
         document.addEventListener('DOMContentLoaded', () => {
             const productContainer = document.querySelector('.group');
@@ -144,13 +97,4 @@
 
     </script>
 
-    <!-- JavaScript for Animations and Interactivity -->
-    <!-- <script>
-        document.getElementById("addToCartBtn").addEventListener("click", function () {
-            alert("Product added to cart!");
-        });
-    </script> -->
-
-</body>
-
-</html>
+@endsection

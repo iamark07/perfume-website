@@ -1,43 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('frontend.partials.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Tailwind CSS CDN link -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Scroll animation CSS CDN link -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-    <!-- Remix icon CDN link -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-
-    <title>Perfume E-commerce</title>
-</head>
-
-<body class="bg-[#fff7ee] font-sans text-gray-800">
+@section('content')
 
     {{-- offer title  --}}
-
-    <!-- Marquee Section -->
-    <div class="relative bg-gradient-to-r from-purple-500 to-pink-500 text-white">
-        <div class="absolute inset-0 bg-black opacity-30"></div>
-        <div class="relative overflow-hidden h-12">
-        <div class="flex items-center h-full scroll-text whitespace-nowrap">
-            <span class="mx-10 font-bold text-lg">🌟 Special Offer: Get 20% OFF on all perfumes! 🌟</span>
-            <span class="mx-10 font-bold text-lg">💐 Free Shipping on Orders Above ₹50! 💐</span>
-            <span class="mx-10 font-bold text-lg">🎁 Buy 2 Get 1 Free on Selected Products! 🎁</span>
+    @section('offer-banner')
+        <!-- Marquee Section -->
+        <div class="relative bg-gradient-to-r from-purple-500 to-pink-500 text-white">
+            <div class="absolute inset-0 bg-black opacity-30"></div>
+            <div class="relative overflow-hidden h-12">
+            <div class="flex items-center h-full scroll-text whitespace-nowrap">
+                <span class="mx-10 font-bold text-lg">🌟 Special Offer: Get 20% OFF on all perfumes! 🌟</span>
+                <span class="mx-10 font-bold text-lg">💐 Free Shipping on Orders Above ₹50! 💐</span>
+                <span class="mx-10 font-bold text-lg">🎁 Buy 2 Get 1 Free on Selected Products! 🎁</span>
+            </div>
+            </div>
         </div>
-        </div>
-    </div>
+    @endsection
 
-    <!-- Include Header -->
-    @include('partials.header')
 
     <!-- Hero Section -->
     <div id="hero" class="relative h-[100dvh] bg-gray-900 overflow-hidden">
@@ -395,9 +374,6 @@
         </div>
     </div>
 
-    
-    
-
     <!-- Fragrance Type Section -->
     <section class="mb-20 py-12 poppins-regular relative bg-fixed bg-cover" style="background-image: url('{{ asset('assets/img/store.jpg') }}');">
         <div class="absolute top-0 left-0 w-full h-full bg-gray-900 opacity-70 z-0"></div>
@@ -620,35 +596,36 @@
         </div>
     </div>
 
-    <!-- Include Footer -->
-    @include('partials.footer')
+    {{-- footer --}}
+    @section('footer')
+        @include('frontend.partials.footer')
+    @endsection
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>
-        window.onload = () => {
+    @section('extra-scripts')
+        <!-- Scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+            integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="{{ asset('assets/js/script.js') }}"></script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            window.onload = () => {
 
-            // Trigger GSAP animation for the content
-            gsap.from(".animate", {
-            opacity: 0,
-            y: 100,
-            stagger: 0.3,
-            duration: 1.1,
+                // Trigger GSAP animation for the content
+                gsap.from(".animate", {
+                opacity: 0,
+                y: 100,
+                stagger: 0.3,
+                duration: 1.1,
+                });
+            };
+            
+            AOS.init({
+                offset: 150,
+                duration: 700,
             });
-        };
 
+        </script>
 
-    </script>
-    <script src="{{ asset('assets/js/script.js') }}"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            offset: 150,
-            duration: 700,
-        });
-    </script>
-</body>
-
-</html>
+    @endsection
+@endsection 

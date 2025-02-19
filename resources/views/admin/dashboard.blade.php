@@ -26,6 +26,7 @@
     <main class="">
         {{-- admin header --}}
         @include('admin.admin-partials.admin-header')
+        
         <div class="lg:flex">
             <!-- Sidebar -->
             @include('admin.admin-partials.admin-nav')

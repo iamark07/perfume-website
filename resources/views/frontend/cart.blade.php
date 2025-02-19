@@ -1,19 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('frontend.partials.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add To Cart</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-
-<body class="bg-[#fff7ee] font-sans text-gray-800">
-
-    <!-- Include Header -->
-    @include('partials.header')
+@section('content')
 
     <section class="cart_section px-5 md:px-20">
 
@@ -90,33 +77,4 @@
 
     </section>
 
-    <script src="assets/js/cart.js"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const cartItemsContainer = document.getElementById('cartItemsContainer');
-
-            cartItemsContainer.addEventListener('click', (event) => {
-                const target = event.target;
-
-                if (target.classList.contains('quantity-increase')) {
-                    const quantityInput = target.previousElementSibling;
-                    let quantity = parseInt(quantityInput.value);
-                    quantityInput.value = quantity + 1;
-                }
-
-                if (target.classList.contains('quantity-decrease')) {
-                    const quantityInput = target.nextElementSibling;
-                    let quantity = parseInt(quantityInput.value);
-                    if (quantity > 1) {
-                        quantityInput.value = quantity - 1;
-                    }
-                }
-            });
-        });
-
-    </script>
-
-</body>
-
-</html>
+@endsection 

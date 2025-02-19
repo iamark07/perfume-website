@@ -1,19 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('frontend.partials.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Results</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-
-<body class="bg-[#fff7ee] font-sans text-gray-800">
-
-    <!-- Include Header -->
-    @include('partials.header')
+@section('content')
 
     <!-- Search Results Section -->
     <section class="search-results-section px-5 md:px-20 py-20">
@@ -116,8 +103,6 @@
         </div>
     </section>
 
-    <script src="assets/js/cart.js"></script>
-
     <script>
         // Example script to toggle no results message
         const resultsGrid = document.getElementById('resultsGrid');
@@ -128,6 +113,5 @@
         }
     </script>
 
-</body>
+@endsection
 
-</html>
